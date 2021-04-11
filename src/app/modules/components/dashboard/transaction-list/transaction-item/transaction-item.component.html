@@ -1,0 +1,44 @@
+<ng-content select="[data-test-hook='transactionColour']"]></ng-content>
+<ng-content select="[data-test-hook='transactionDate']"]></ng-content>
+<div class="merchant-details">
+  <ng-content select="[data-test-hook='transactionMerchantName']"></ng-content>
+  <ng-content select="[data-test-hook='transactionType']"></ng-content>
+</div>
+<ng-content select="[data-test-hook='transactionAmount']"></ng-content>
+
+<div *ngIf="transactionItem">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-1">
+        <div class="" data-test-hook="transactionColour">
+          <div [ngClass]=" this.index % 2 == 0  ? 'verticalLine-red' : 'verticalLine-green'"></div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="" data-test-hook="transactionDate">
+          {{ transactionItem.transactionDate | date:'MMM' }}. {{ transactionItem.transactionDate | date:'d' }}
+        </div>
+      </div>
+      <div class="col-7">
+        <div>
+          <div class="" data-test-hook="transactionMerchantName">
+            <label>{{ transactionItem.transactionMerchantName}}</label>
+          </div>
+          <div class="" data-test-hook="transactionType">
+           <label for=""> {{transactionItem.transactionType}} </label>
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="" data-test-hook="transactionAmount">
+          <label [ngClass]="transactionItem.transactionType != 'Salaries' ? 'widthdraw' : 'deposit'" >
+            {{ (transactionItem.transactionType != 'Salaries' ? - transactionItem.transactionAmount :  transactionItem.transactionAmount) | currency:transactionItem.transactionCurrencyCode:true:'2.2-4'}}
+          </label>
+         </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

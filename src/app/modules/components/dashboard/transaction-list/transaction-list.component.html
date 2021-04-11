@@ -1,0 +1,7 @@
+<app-navbar [title]="headerTitle" [iconName]="headerIconName" ></app-navbar>
+<app-filter (inputChange)="searchByMerchantName($event)"></app-filter>
+<div class="list-transactions" *ngFor="let transaction of transactions; let i = index;">
+    <app-transaction-item [transactionItem]="transaction" [index]="i"></app-transaction-item>
+    <hr>
+</div>
+

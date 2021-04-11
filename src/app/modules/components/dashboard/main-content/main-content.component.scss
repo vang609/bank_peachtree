@@ -1,0 +1,41 @@
+
+.bg-image-2{
+  background-image: url('../../../../../assets/img/background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // background-size: cover;
+  // width: 100px;
+  // height: 100px;
+  z-index:-5;
+  // position: relative;
+}
+
+.bg-image {
+  /* The image used */
+  background-image: url('../../../../../assets/img/background.jpg') !important;
+
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+  /* Full height */
+  height: 100%;
+
+  z-index:-5 !important;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.both-cards {
+  z-index: 1000 !important;
+  // position: absolute;
+}
+
+.card-index {
+  z-index: 1000 !important;
+  // position: absolute;
+}

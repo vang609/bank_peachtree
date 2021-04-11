@@ -1,0 +1,44 @@
+<app-navbar [title]="headerTitle" [iconName]="headerIconName" ></app-navbar>
+
+<form [formGroup]="makeTransferForm" >
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <!-- <form class="form-inline"> -->
+            <div class="form-group">
+              <label for="description">From Account</label>
+              <input type="text" name="name" formControlName="fromAccount" class="form-control" [placeholder]="placeholderFromAccount">
+              <!-- <input type="text" class="form-control" id="description" placeholder="" ng-model='transaction.description'> -->
+            </div>
+            <div class="form-group">
+              <label for="description">To Account</label>
+              <input type="text" name="name" formControlName="toAccount" class="form-control"  [placeholder]="placeholderToAccount">
+              <!-- <div class="input-group">
+                <span class="input-group-addon">$</span>
+                <input type="number" step="0.01" min=0 class="form-control" id="amount" placeholder="0.00" ng-model="transaction.amount">
+              </div> -->
+            </div>
+            <div class="form-group">
+              <label for="description">Account</label>
+              <input  type="number" name="name"
+                      formControlName="account"
+                      class="form-control"
+                      [placeholder]="placeholderAccount" >
+              <!-- <input type="text" class="form-control" id="description" placeholder="" ng-model='transaction.description'> -->
+            </div>
+
+          <!-- </form> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row btn-container"  >
+    <app-submit-button [formValid]="formValid" (submitForm)="showModalTransfer($event)" ></app-submit-button>
+  </div>
+</form>
+
+<app-review-transfer></app-review-transfer>
+
+
+
